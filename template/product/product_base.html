@@ -1,0 +1,54 @@
+{% extends "base_case.html" %}
+{% block title %}协同办公平台{% endblock %}
+{% block header %}{% endblock %}
+{% block navigation %}首页→产品→协同办公平台{% endblock %}
+{% block name %}协同办公平台{% endblock %}
+{% block case_content %}
+<div class="coordination" style="overflow:hidden;">
+	{% for part in part1 %}
+	<div class='row'>
+		<h2>{{ part.name }}</h2>
+	</div>
+	<div class='row product_bg'>
+		<div class='product_left'>
+			<pre>{{ part.content }}</pre>
+		</div>
+		<div class='product_right'>
+			<img src='{{ part.img.url }}'/>
+		</div>
+	</div>
+	{% endfor %}
+	{% for part in part2 %}
+	<div class='row'>
+		<h2>{{ part.name }}</h2>
+		<pre>{{ part.content }}</pre>
+	</div>
+	{% endfor %}
+	{% for part in part3 %}
+	<div class='row product_bg'>
+		<div class='product_left'>
+			<div class='product_up'>
+				<h5>>{{ part.purpore }}</h5>
+			</div>
+			<div class='product_down'>
+				<pre>{{ part.content }}</pre>
+			</div>
+		</div>
+		<div class='product_right'>
+			<img src='{{ part.img.url }}'/>
+		</div>
+	</div>
+	{% endfor %}
+	{% for part in part4 %}
+	<div class='row part4'>
+		<h2>>{{ part.name }}</h2>
+		<div class='part4_left'>
+			<pre>{{ part.content }}</pre>
+		</div>
+		<div class='part4_right'>
+			<img src='{{ part.img.url }}'/>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

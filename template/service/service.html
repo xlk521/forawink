@@ -1,0 +1,27 @@
+{% extends "base_case.html" %}
+{% block case_content %}
+<div class='service'style="overflow:hidden;">
+	{% for heads in head %}
+	<div class="row about_img service_img" style="background:url({{ heads.img.url }}) no-repeat;">
+		<h3>{{ heads.name }}</h3>
+		<pre>{{ heads.content }}</pre>
+	</div>
+	{% endfor %}
+	{% block service_head %}{% endblock %}
+	{% for contents in content %}
+	<div class='row product_bg' id="service{{ contents.num }}">
+		<div class='product_left'>
+			<div class='product_up'>
+				<h5>{{ contents.name }}</h5>
+			</div>
+			<div class='product_down'>
+				<pre>{{ contents.content }}</pre>
+			</div>
+		</div>
+		<div class='product_right'>
+			<img src='{{ contents.img.url }}'/>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

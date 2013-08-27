@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row case_line1">
+	<div>
+		{% block navigation %}{% endblock %}
+	</div>
+</div>
+<div class="row case_line2" >
+	<div class="three columns">
+		{% block name %}{% endblock %}
+	</div>
+	<div class="line line_left"></div>
+	{% block right %}{% endblock %}
+</div>
+{% block case_content %}{% endblock %}
+{% endblock %}

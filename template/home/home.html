@@ -1,0 +1,130 @@
+{% extends "base.html" %}
+{% block title %}首页{% endblock %}
+{% block header %}
+{% endblock %}
+{% block content %}
+<div class="row" style="overflow:hidden;position: relative;margin-top: 55px;z-index: 0;">
+	<ul id="featured2" data-orbit="" class="orbit-slides-container" style="margin-left: -100%; width: 500%; height: 322.390625px;">
+		{% for home in homes %}
+		<li data-orbit-slide="" style="width: 900px;"class="active">
+	        <img class="home_img" src="{{ home.img.url }}"/>
+	    </li>
+	    {% endfor %}
+	</ul>
+</div>
+<div class="row home_foundation" style="">
+	<div class="foundation_h">
+		<div class="foundation_name">
+			<a style="color:rgb(50, 219, 206);" href="/service/Development/">应用软件开发</a>
+		</div>
+		<div>
+			<div class="foundation_img">
+				{% for using in usings %}
+				<a href="/service/Development/"><img src="{{ using.img.url }}"/></a>
+				{% endfor %}
+			</div>
+			<div class="foundation_img foundation_font">
+				<ul>
+					<li>
+						<a href='/service/Development/#service1'>企业资源计划</a>
+					</li>
+					<li>
+						<a href='/service/Development/#service2'>移动商务应用</a>
+					</li>
+					<li>
+						<a href='/service/Development/#service3'>物联网及数据检测</a>
+					</li>
+					<li>
+						<a href='/service/Development/#service4'>数字化营销平台</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="foundation_h">
+		<div class="foundation_name">
+			<a style="color:rgb(50, 219, 206);" href="/service/Support/">信息技术咨询</a>
+		</div>
+		<div>
+			<div class="foundation_img">
+				{% for technology in technologys %}
+				<a href="/service/Support/">
+					<img src="{{ technology.img.url }}"/>
+				</a>
+				{% endfor %}
+			</div>
+			<div class="foundation_img foundation_font">
+				<ul>
+					<li>
+						<a href='/service/Support/#service1'>企业IT战略规划</a>
+					</li>
+					<li>
+						<a href='/service/Support/#service2'>企业IT系统架构设计</a>
+					</li>
+					<li>
+						<a href='/service/Support/#service3'>信息安全和系统保证</a>
+					</li>
+					<li>
+						<a href='/service/Support/#service4'>敏捷精益软件开发方法</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="foundation_h">
+		<div class="foundation_name">
+			<a style="color:rgb(50, 219, 206);" href="/service/UIVI/">UI设计 / VI设计</a>
+		</div>
+		<div>
+			<div class="foundation_img">
+				{% for ui in uis %}
+				<a href='/service/UIVI/'>
+					<img src="{{ ui.img.url }}"/>
+				</a>
+				{% endfor %}
+			</div>
+			<div class="foundation_img foundation_font">
+				<ul>
+					<li>
+						<a href='/service/UIVI/#service1'>UI设计</a>
+					</li>
+					<li>
+						<a href='/service/UIVI/#service2'>移动界面设计</a>
+					</li>
+					<li>
+						<a href='/service/UIVI/#service3'>网站开发</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row home_foundation" style="margin-bottom:30px;">
+	{% for case in cases %}
+	{% if case.num == 1 %}
+	<div class="two columns foundation_h">
+		<div class="foundation_name">
+			<a href="/case/" style="color:rgb(50, 219, 206);" href="">案例展示</a>
+		</div>
+		<div>
+			<div class="foundation_img show_work">
+				<a href="{{ case.url }}">
+					<img class="show_img" src="/static/img/foundation1.png"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	{% else %}
+	<div class="two columns foundation_h">
+		<div class="foundation_name"></div>
+		<div>
+			<div class="foundation_img show_work">
+				<a href="{{ case.url }}">
+					<img class="show_img" src="/static/img/foundation1.png"/>
+				</a>
+			</div>
+		</div>
+	</div>
+	{% endif %}
+	{% endfor %}
+{% endblock %}

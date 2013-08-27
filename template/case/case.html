@@ -1,0 +1,28 @@
+{% extends "base_case.html" %}
+{% block title %}案例{% endblock %}
+{% block header %}{% endblock %}
+{% block navigation %}首页→案例{% endblock %}
+{% block name %}案例{% endblock %}
+{% block case_content %}
+<div style="overflow:hidden;">
+	{% for case in cases %}
+	<div class="row"style="overflow:hidden;">
+		<div class="case_left" style='padding: 0 10px;'>
+			<div class="case_up">
+				<h2 >
+					{{ case.name }}
+				</h2>
+			</div>
+			<hr class='case_hr'/>
+			<div class="case_down">
+				<pre>{{ case.content }}</pre>
+			</div>
+		</div>
+		<div class="case_left">
+			<img src='{{ case.img.url }}'/>
+			<a href="{{ case.img.path }}"></a>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}

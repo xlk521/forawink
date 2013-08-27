@@ -1,0 +1,34 @@
+{% extends "base_case.html" %}
+{% block case_content %}
+<div class="solutions" style="overflow:hidden;">
+	{% for part in part1 %}
+	<div class='row solutions_part1'>
+		<div class="part1_left">
+			<h3>{{ part.name }}</h3>
+			<pre>{{ part.content }}</pre>
+		</div>
+		<div class="part1_right">
+			<img src="{{ part.img.url }}"/>
+		</div>
+	</div>
+	{% endfor %}
+	{% for part in part2 %}
+	<div class='row solutions_part2'>
+		<h3>{{ part.name }}</h3>
+		<pre>{{ part.content }}</pre>
+	</div>
+	{% endfor %}
+	<div class='row solutions_part3'>
+		{% for part in part3 %}
+		<div class="part3_half">
+			<div class="part3_left">
+				<img src="{{ part.img.url }}"/>
+			</div>
+			<div class="part3_right">
+				<pre>{{ part.content }}</pre>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
